@@ -512,7 +512,7 @@ const products = [
   {
     id: 1,
     name: 'BLOOM AURA',
-    category: 'accessories',
+    category: 'handmade accessories',
     price: 499,
     oldPrice: 699,
     image: 'bloom aura.jpeg',
@@ -522,7 +522,7 @@ const products = [
   {
     id: 2,
     name: 'NEEL PARI',
-    category: 'accessories',
+    category: 'handmade accessories',
     price: 449,
     oldPrice: 649,
     image: 'neel pari.jpeg',
@@ -532,7 +532,7 @@ const products = [
   {
     id: 3,
     name: 'PHOOLRANI',
-    category: 'accessories',
+    category: 'handmade accessories',
     price: 549,
     oldPrice: 749,
     image: 'phoolrani.jpeg',
@@ -546,7 +546,9 @@ let activeFilter = 'all';
 
 function renderProducts(filter) {
   const grid = document.getElementById('productsGrid');
-  const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+  const filtered = filter === 'all'
+  ? products
+  : products.filter(p => p.category.includes(filter));
   grid.innerHTML = filtered.map(p => `
     <div class="product-card">
 <div class="product-img">
