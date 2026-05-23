@@ -551,9 +551,9 @@ function renderProducts(filter) {
   : products.filter(p => p.category.includes(filter));
   grid.innerHTML = filtered.map(p => `
     <div class="product-card">
-<div class="product-img">
+<div class="product-img" style="height:300px;">
   ${p.badge ? `<div class="product-badge">${p.badge}</div>` : ''}
-  <img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;">
+  <img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;display:block;">
 </div>
           <button class="add-btn" onclick="addToCart(${p.id})">+ Add</button>
         </div>
